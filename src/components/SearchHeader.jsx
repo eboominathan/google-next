@@ -4,6 +4,7 @@ import Image from "next/image";
 import SearchBox from './SearchBox';
 import {  RiSettings3Line  } from 'react-icons/ri';
 import { TbGridDots } from 'react-icons/tb';
+import SearchHederOptions from './SearchHederOptions';
 
 export default function SearchHeader() {
   return (
@@ -30,8 +31,9 @@ export default function SearchHeader() {
         <TbGridDots className='bg-transparent 
         hover:bg-gray-200 p-2 text-4xl rounded-full cursor-pointer'/>
         </div>
-        <button className='bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:shadow-md transition-shadow ml-2'>Signin</button>
+        <button className='bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105 transition-shadow ml-2'>Signin</button>
        </div>
+       <SearchHederOptions/>
     </header>
   )
 }
