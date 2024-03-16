@@ -1,5 +1,7 @@
 import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
+import { Suspense } from "react";
+
 
 export default async function WebSearchPage({ searchParams }) {
   const response = await fetch(
@@ -12,6 +14,7 @@ export default async function WebSearchPage({ searchParams }) {
 
   if(!results){
     return (
+      <Suspense>
       <div className='flex flex-col justify-center items-center pt-10'>
         <h1 className='text-3xl mb-4'>
           No result found for {searchParams.searchTerm}
@@ -23,6 +26,7 @@ export default async function WebSearchPage({ searchParams }) {
           </Link>
         </p>
       </div>
+      </Suspense>
     )
   }
   return <div>{results && <WebSearchResults results={data} />}</div>;
